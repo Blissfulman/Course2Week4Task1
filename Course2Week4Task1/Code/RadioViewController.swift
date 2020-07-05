@@ -21,7 +21,6 @@ class RadioViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 22, weight: .medium)
         label.textColor = .black
         label.numberOfLines = 1
-        label.textAlignment = .left
         return label
     }()
     
