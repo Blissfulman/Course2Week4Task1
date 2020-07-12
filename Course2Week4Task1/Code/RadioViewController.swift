@@ -120,21 +120,12 @@ class RadioViewController: UIViewController {
     }
     
     func layoutTrait(traitCollection: UITraitCollection) {
-        if (!sharedConstraints[0].isActive) {
-            // Активация общих констрейнтов
-            NSLayoutConstraint.activate(sharedConstraints)
-        }
+        NSLayoutConstraint.activate(sharedConstraints)
         if traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .regular {
-            if regularConstraints.count > 0 && regularConstraints[0].isActive {
-                NSLayoutConstraint.deactivate(regularConstraints)
-            }
-            // Активация compact констрейнтов
+            NSLayoutConstraint.deactivate(regularConstraints)
             NSLayoutConstraint.activate(compactConstraints)
         } else {
-            if compactConstraints.count > 0 && compactConstraints[0].isActive {
-                NSLayoutConstraint.deactivate(compactConstraints)
-            }
-            // Активация regular констрейнтов
+            NSLayoutConstraint.deactivate(compactConstraints)
             NSLayoutConstraint.activate(regularConstraints)
         }
     }
